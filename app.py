@@ -12,7 +12,7 @@ st.write("Modelo de clasificación MLP entrenado por Mayra.")
 # ==========================
 @st.cache_resource
 def load_model():
-    return joblib.load("pipeline_MLP.joblib")
+    return joblib.load("Artefactos/v1/pipeline_MLP.joblib")
 
 model = load_model()
 
@@ -66,4 +66,5 @@ if st.button("Predecir riesgo"):
         prob = model.predict_proba(input_data)[0][1]
         st.write(f"Probabilidad estimada: **{prob:.2f}**")
     except:
+
         pass
